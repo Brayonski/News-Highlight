@@ -1,0 +1,35 @@
+{% extends 'base.html'%}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8"> {% if title %}
+    <title> {{ title }}</title>
+    {% else %}
+    <title> Welcome to the best News website </title>
+    {% endif %}
+</head>
+
+<body>
+    <!-- Content block -->
+    {% block content %}
+    <!--  news section  -->
+    <h3> News Center</h3>
+
+    <ul>
+        {% for popular_news in popular %}
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">{{ popular_news.title}}</h5>
+                <!-- <h6 class="card-subtitle mb-2 text-muted"></h6> -->
+                <p class="card-text">{{popular_news.overview}}</p>
+                <p class="card-link"><a href="{{ popular_news.url}}" target="blank">{{ popular_news.id}}</a></p>
+                {% endfor %}
+            </div>
+        </div>
+    </ul>
+
+    {% endblock%}
+</body>
+
+</html>
