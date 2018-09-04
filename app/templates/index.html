@@ -19,21 +19,20 @@
     <!-- Content block -->
     {% block content %}
     <!--  news section  -->
-    <h3> News Center</h3>
     <div class="container">
-        <div class="card-columns">
+        <div class="row">
             {% for popular_news in popular %}
-
-            <div class="card border-secondary mb-3" style="max-width: 18rem;">
-                <div class="card-header">
-                    <h5 class="card-title">{{ popular_news.title}}</h5>
-                </div>
-                <div class="card-body text-secondary">
-                    <p class="card-text">{{popular_news.overview}}</p>
-                    <p class="card-link"><a class="btn bnt-info" href="{{ popular_news.url}}" target="blank">{{ popular_news.id}}</a></p>
+            <div class="col-md-3">
+                <div class="card border-secondary mb-3" style="max-width: 18rem;">
+                    <div class="card-header">
+                        <h5 class="card-title">{{ popular_news.title}}</h5>
+                    </div>
+                    <div class="card-body text-secondary">
+                        <p class="card-text">{{popular_news.overview}}</p>
+                        <p class="card-link"><a class="btn bnt-info" href="{{ popular_news.url}}" target="blank">{{ popular_news.id}}</a></p>
+                    </div>
                 </div>
             </div>
-
             {% endfor %}
         </div>
     </div>
