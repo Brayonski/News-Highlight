@@ -1,4 +1,4 @@
-class News:
+class Sources:
     def __init__(self,id,title,overview,url,category,country):
         self.id =id
         self.title = title
