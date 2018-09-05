@@ -32,23 +32,6 @@ def get_news(category):
 
     return news_results
 
-def get_articles(articles):
-    '''
-    Function that gets the json response to url request
-    '''
-    get_source_url = base_url.format(articles, api_key)
-    with urllib.request.urlopen(get_source_url) as url:
-        get_source_data = url.read()
-        get_source_response = json.loads(get_source_data)
-
-        source_results = None
-
-        if get_source_response['articles']:
-            source_results_list = get_source_response['articles']
-            source_results = obtain_results(source_results_list)
-    
-    return source_results
-
 # processing results
 
 
@@ -73,10 +56,44 @@ def process_results(news_list):
                 id, title, overview, url, category, country)
             news_results.append(news_object)
     return
+        
+def get_articles(articles):
+    '''
+    Function that gets the json response to url request
+    '''
+    get_source_url = base_url.format(articles, api_key)
+    with urllib.request.urlopen(get_source_url) as url:
+        get_source_data = url.read()
+        get_source_response = json.loads(get_source_data)
 
+        source_results = None
 
+        if get_source_response['articles']:
+            source_results_list = get_source_response['articles']
+            source_results = obtain_results(source_results_list)
     
+    return source_results
 
-def 
+# processing sources results
+
+def obtain_results(articles_list):
+    '''
+    Function that process the sources results and transform them to alist of objects
+    Args:
+        articles_list: A lsit of dictionaries that contain news details
+    Return:
+        news_result: A list of news objects
+    '''
+    source_results = []
+    for source_item in articles_list:
+        id = source_item.get('id')
+        author = source_item.get('author')
+        title = source_item.get('title')
+        description = source_item.get('description')
+        url = source_item.get('url')
+        urlToImage = source_item.get('urlToImage')
+        publishedAt = source_item.get('publishedAt')
+
+
 
 
