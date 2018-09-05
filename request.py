@@ -7,8 +7,11 @@ Sources = news.Sources
 # Getting api key
 api_key = app.config['NEWS_API_KEY']
 
-# Getting the News base url
+# Getting the sources base url
 base_url = app.config["SOURCES_API_BASE_URL"]
+#getting the articles base url
+articles_url = app.config["ARTICLES_API_BASE_URL"]
+
 
 
 def get_news(category):
