@@ -1,6 +1,6 @@
 from flask import render_template
 from app import app
-from request import get_sources
+from request import get_sources,get_articles
 # Views
 
 
@@ -14,6 +14,17 @@ def index():
     print(popular_news)
     title = 'Home - Welcome to The best News  Website Online'
     return render_template('index.html', title = title, popular = popular_news)
+
+@app.route('/')
+def index():
+    '''
+    View root page function that returns the articles page and its data
+    '''
+    #Getting articles news feed
+    news_articles = get_articles('myarticles')
+    print(news_articles)
+    title = 'Articles'
+    return render_template('articles.html', title = title, myartcles = news_articles)
 
 @app.route('/news/<int:news_id>')
 def news(news_id):
