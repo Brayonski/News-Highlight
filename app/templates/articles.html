@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<body>
+    <div class="container">
+        <h1>{{title}}</h1>
+        <div class="row">
+            {% for popular_articles in myarticles %}
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <h4>{{ popular_articles.title }}</h4>
+                    <p>Author: {{ popular_articles.author }}</p>
+                    <p>Published on: {{ popular_articles.publishedAt }}</p>
+                    <a href="{{ popular_articles }}"> <button target="_blank" class="btn btn-success">View Full story</button></a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+</body>
