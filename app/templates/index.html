@@ -23,15 +23,15 @@
     <!--  news section  -->
     <div class="container">
         <div class="row">
-            {% for popular_news in popular %}
+            {% for item in enter %}
             <div class="col-md-3">
                 <div class="card border-secondary mb-3" style="max-width: 18rem;">
-                    <div class="card-header">{{ popular_news.title}}
+                    <div class="card-header">{{ item.title}}
                         <h5 class="card-title"></h5>
                     </div>
                     <div class="card-body text-secondary">
-                        <p class="card-text">{{popular_news.overview}}</p>
-                        <a class="btn btn-primary" href="/articles/{{popular_news.id}}" target="_blank">View</a>
+                        <p class="card-text">{{item.overview}}</p>
+                        <a class="btn btn-primary" href="/articles/{{item.id}}" target="_blank">View</a>
                     </div>
                 </div>
             </div>

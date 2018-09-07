@@ -12,7 +12,7 @@ class Articles:
         self.id = id
         self.author = author
         self.title = title
-        self.description = descrition
+        self.description = description
         self.url = url
         self.urlToImage = urlToImage
         self.publishedAt = publishedAt

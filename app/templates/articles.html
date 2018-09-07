@@ -4,13 +4,14 @@
     <div class="container">
         <h1>{{title}}</h1>
         <div class="row">
-            {% for popular_articles in myarticles %}
+            {% for article in news %}
             <div class="col-md-4">
                 <div class="panel panel-default">
-                    <h4>{{ popular_articles.title }}</h4>
-                    <p>Author: {{ popular_articles.author }}</p>
-                    <p>Published on: {{ popular_articles.publishedAt }}</p>
-                    <a href="{{ popular_articles }}"> <button target="_blank" class="btn btn-success">View Full story</button></a>
+                    <img src="{{ article.url }}" height="200px" width="350px" alt="">
+                    <h4>{{ article.title }}</h4>
+                    <p>Author: {{ article.author }}</p>
+                    <p>Published on: {{ article.publishedAt }}</p>
+                    <a href="{{ article.url }}"> <button target="_blank" class="btn btn-success">View Full story</button></a>
                 </div>
             </div>
             {% endfor %}

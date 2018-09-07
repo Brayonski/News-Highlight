@@ -89,17 +89,17 @@ def obtain_results(articles_list):
 
     articles_results = []
     for article_item in articles_list:
+        
         id = article_item.get('id')
         author = article_item.get('author')
         title = article_item.get('title')
         description = article_item.get('description')
-        url = article_item.get('url')
         urlToImage = article_item.get('urlToImage')
         publishedAt = article_item.get('publishedAt')
         url = article_item.get('url')
 
-        article_object = Articles(id,author,title,description,url,urlToImage,publishedAt, url)
+        article_object = Articles(id,author,title,description,urlToImage,publishedAt, url)
         articles_results.append(article_object)
-        return articles_results
+    return articles_results
 
 
